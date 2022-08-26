@@ -3,9 +3,9 @@ package com.sm.kindlehighlightsexporter;
 import static java.lang.System.out;
 
 import java.io.File;
-import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -66,6 +66,9 @@ public class ParseCommand implements Callable<Integer> {
     for(Entry<String, List<Note>> entry : notesCollection.entrySet()){
       out.println("Book: " + entry.getKey());
       out.println("=========");
+
+      entry.getValue().sort(Comparator.comparing(Note::getPage));
+
       for (Note note : entry.getValue()){
         out.println(formatter.format(note));
       }
