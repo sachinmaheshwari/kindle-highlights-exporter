@@ -1,5 +1,6 @@
 # Getting Started
 
+![Use case](./img.png)
 
 Copy the `My Clippings.txt` from Kindle to your local directory then use following commands to execute it. 
 
